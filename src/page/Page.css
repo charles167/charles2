@@ -1,0 +1,339 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --green: #34a853; /* vibrant green */
+  --green-light: #eafbea; /* soft background green */
+  --yellow: #fbbc05; /* vibrant yellow */
+
+  --text-color: var(--black);
+  --default-color: var(--green);
+  --default-light: var(--green-light);
+  --accent-color: var(--yellow);
+  --shadow: 1px 4px 5px rgba(0, 0, 0, 0.1);
+  --font: "Poppins", sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-color: var(--white);
+  color: var(--text-color);
+  font-family: var(--font);
+}
+
+.breadcrumb-container {
+  background: url(../assets/Lbanner.jpg);
+  background-size: cover;
+  height: 350px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.bread-crumbs_content {
+  background-color: #000000aa;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 30px 0px;
+}
+
+.bread-crumb-head {
+  font-size: 35px;
+  color: var(--white);
+  font-family: poppinsBold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.Category {
+  padding: 40px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.categories_Subhead {
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: poppinsMedium;
+  margin: auto;
+  color: var(--black);
+  background-color: var(--accent-color);
+}
+
+.category-head {
+  text-shadow: var(--shadow);
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.category_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.category_item {
+  width: 180px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.2s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.category_item:hover {
+  transform: translateY(-5px);
+}
+
+.category-content {
+  color: #000000b4;
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-family: poppinsMedium;
+}
+
+.arrows-direction-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.arrows-direction-container div {
+  background-color: #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.arrows-direction-container div:hover {
+  background-color: #cfcfcf;
+}
+
+.banner {
+  padding: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.banner-container img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.vendor_head_container {
+  padding: 40px 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.Vendor-head {
+  font-size: 27px;
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  font-family: poppinsBold;
+}
+
+.vendor-sub_head {
+  width: max-content;
+  margin: auto;
+  padding: 5px 15px;
+  font-family: poppinsMedium;
+  color: var(--default-color);
+  background-color: var(--default-light);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.vendor-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 0 30px 40px;
+}
+
+.vendor-items {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  background: var(--white);
+  transition: transform 0.3s ease;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.vendor-items:hover {
+  transform: scale(1.03);
+  border: 2px solid var(--accent-color);
+}
+
+.vendor-items img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.vendor-contents {
+  padding: 15px;
+  font-size: 14px;
+  font-family: poppinsMedium;
+  color: var(--text-color);
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+
+
+
+
+
+
+.page-item {
+  padding: 10px 14px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: var(--default-light);
+  font-weight: bold;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.page-item.active {
+  background-color: var(--accent-color);
+  color: var(--black);
+}
+
+.page-item:hover {
+  background-color: var(--default-color);
+  color: var(--white);
+}
+
+.offer-container {
+  padding: 50px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.what-we-offer-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.offer-items {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  min-width: 300px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.offer-items-header {
+  font-size: 18px;
+  font-family: poppinsBold;
+  color: var(--text-color);
+}
+
+.offer-items-content {
+  font-size: 14px;
+  font-family: poppinsMedium;
+  margin-top: 10px;
+}
+.modal-body {
+  display: none !important;
+}
+.modal-body-Active {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-container {
+  width: 90%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modal-header {
+  font-size: 24px;
+  font-family: poppinsBold;
+  text-align: center;
+  color: var(--default-color);
+}
+
+.modal-content {
+  font-family: poppinsMedium;
+  font-size: 15px;
+  margin-top: 15px;
+  color: #333;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .breadcrumb-container {
+    height: 250px;
+  }
+  .vendor-items {
+    width: 90% !important;
+  }
+  .banner {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bread-crumb-head {
+    font-size: 22px;
+  }
+}
+
+
+

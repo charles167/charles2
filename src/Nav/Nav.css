@@ -1,0 +1,281 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #1A1A1A;
+  --color-green: #198754;
+  --color-yellow: #FFCC00;
+  --color-soft-gray: #f9f9f9;
+
+  --shadow: 1px 4px 5px rgba(0, 0, 0, 0.1);
+  --text-color: var(--color-black);
+  --default-color: var(--color-green);
+  --nav-bg: var(--color-white);
+  --nav-text-color: var(--color-black);
+}
+
+@font-face {
+  font-family: poppinsBold;
+  src: url(../font/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: poppinsSemiBold;
+  src: url(../font/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: poppinsLight;
+  src: url(../font/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: poppinsMedium;
+  src: url(../font/Poppins-Medium.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ======================= TOP INFO BAR ====================== */
+.information,
+.information-sm {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.information div,
+.information-sm div {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: poppinsSemiBold;
+}
+.information a,
+.information-sm a {
+  color: var(--color-yellow);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ======================= DESKTOP NAVBAR ====================== */
+.nav-position_container {
+  position: fixed;
+  z-index: 100000000;
+  background-color: var(--nav-bg);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav_container {
+  padding: 20px;
+  height: 70px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo,
+.nav-logo-sm {
+  width: 150px;
+}
+
+.Navigation_Container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.Navigation_Container ul {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+.Navigation_Container ul li {
+  list-style-type: none;
+}
+.Link,
+.Link_sm {
+  text-decoration: none;
+  color: var(--nav-text-color);
+  font-weight: 500;
+  font-size: 15px;
+  font-family: poppinsMedium;
+  transition: 0.3s ease;
+}
+.Link:hover,
+.Link_sm:hover {
+  color: var(--color-yellow);
+}
+
+/* ======================= CART ====================== */
+.Cart_COunt,
+.Cart_COunt-sm {
+  background-color: var(--default-color);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: bold;
+  font-family: poppinsSemiBold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+.Cart_COunt {
+  border-radius: 100%;
+  height: 14px;
+  width: 14px;
+  top: 0;
+  right: -7px;
+}
+.Cart_COunt-sm {
+  padding: 3px 8px;
+  height: 25px;
+  font-size: 12px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* ======================= SEARCH ====================== */
+.Search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #00000068;
+  padding: 10px;
+  border-radius: 5px;
+}
+.Search-icon {
+  transition: 250ms;
+  cursor: pointer;
+}
+.Search-icon:hover {
+  color: var(--color-green);
+}
+
+/* ======================= TIME FORMAT ====================== */
+.time-format,
+.time {
+  background-color: var(--color-green);
+  color: white;
+  padding: 5px 10px;
+  font-family: poppinsMedium;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* ======================= MENU ====================== */
+.menu {
+  font-family: poppinsSemiBold;
+  text-transform: uppercase;
+}
+.menu-hr {
+  width: 100%;
+  height: 0.5px;
+  background-color: #00000068;
+}
+.sub-list {
+  padding: 0 100px !important;
+}
+
+/* ======================= MOBILE NAVBAR ====================== */
+.nav-sm {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-position_container {
+    display: none;
+  }
+
+  .nav-sm {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+  }
+
+  .nav-cont-sm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .hamburger,
+  .close-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: var(--color-yellow);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  .hamburger:hover,
+  .close-btn:hover {
+    background-color: var(--color-green);
+  }
+
+  .navigation-box-sm {
+    visibility: hidden;
+    position: fixed;
+    top: 25px;
+    left: 0;
+    width: 0 !important;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--nav-bg);
+    transition: 350ms;
+  }
+
+  .navigation-box-sm-active {
+    visibility: visible;
+    position: fixed;
+    top: 25px;
+    left: 0;
+    width: 290px !important;
+    height: 100%;
+    transition: 250ms;
+    background-color: var(--nav-bg);
+  }
+
+  .Navigation_Container_sm {
+    margin-top: 15px;
+    padding: 15px;
+  }
+  .Navigation_Container_sm ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+  }
+  .Navigation_Container_sm ul li {
+    height: 50px;
+    list-style-type: none;
+  }
+  .Navigation_Container_sm ul li .Link_sm {
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    font-family: poppinsMedium;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .wishlistandcart {
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 10px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--nav-text-color);
+    font-family: poppinsMedium;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

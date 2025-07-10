@@ -1,0 +1,240 @@
+:root {
+  --shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.09);
+  --white: #ffffff;
+  --black: #000000;
+  --green: #34a853;         /* vibrant green */
+  --green-light: #eafbea;   /* soft background green */
+  --yellow: #fbbc05;        /* vibrant yellow */
+
+  --text-color: var(--black);
+  --default-color: var(--green);
+  --hover-color: #1e7c34;
+  --accent-color: var(--yellow);
+  --neutral-light: var(--green-light);
+  --muted-text: rgba(0, 0, 0, 0.5);
+  --border-color: rgba(0, 0, 0, 0.221);
+  --light-border: rgba(0, 0, 0, 0.094);
+  --error-color: red;
+  --outline-color: blue;
+}
+
+@font-face {
+  font-family: poppinsBold;
+  src: url(../font/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: poppinsSemiBold;
+  src: url(../font/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: poppinsLight;
+  src: url(../font/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: poppinsMedium;
+  src: url(../font/Poppins-Medium.ttf);
+}
+
+.breadcrumbs {
+  padding: 10px 20px;
+  color: var(--text-color);
+  font-family: poppinsMedium;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.headercontact {
+  font-size: 23px;
+  color: var(--text-color);
+  font-family: poppinsSemiBold;
+}
+
+.headercontact2 {
+  font-size: 13px;
+  color: var(--muted-text);
+  font-family: poppinsMedium;
+  margin-top: 10px;
+}
+.headercontact2::first-letter {
+  text-transform: capitalize;
+}
+
+.instruction {
+  font-family: poppinsLight;
+  color: var(--muted-text);
+  font-size: 12px;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.form-input {
+  overflow: scroll !important;
+  scrollbar-width: none;
+}
+
+.form-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.form-blob {
+  width: 300px;
+}
+
+.form-body {
+  margin-top: 20px;
+}
+
+.form-flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.review-form {
+  width: 500px;
+  height: auto !important;
+}
+
+.review-form label {
+  font-family: poppinsMedium;
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+.review-form input {
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-family: poppinsMedium;
+  font-size: 13px;
+  width: 100% !important;
+  outline-color: var(--outline-color);
+}
+
+.review-form ::placeholder {
+  font-family: poppinsMedium;
+  font-size: 12px;
+  color: var(--muted-text);
+}
+
+.review-form select {
+  font-family: poppinsMedium;
+  font-size: 13px;
+  width: 100% !important;
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
+  color: var(--text-color);
+  border-radius: 5px;
+  height: 40px !important;
+  outline: none;
+  background-color: transparent;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  font-size: 13px !important;
+}
+
+.review-form textarea {
+  font-family: poppinsMedium;
+  font-size: 13px;
+  border: 1px solid var(--border-color);
+  padding: 8px 10px;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  height: 80px !important;
+}
+
+.review-form .review-button {
+  font-family: poppinsMedium;
+  font-size: 13px;
+  width: 100% !important;
+  color: var(--text-color);
+  margin-top: 10px;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  transition: 350ms;
+}
+
+.review-form .review-button:hover {
+  color: var(--white);
+  background-color: var(--default-color);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 12px;
+  font-family: poppinsMedium;
+}
+
+@media screen and (max-width: 768px) {
+  .form-flex {
+    display: block;
+  }
+
+  .form-blob {
+    display: none;
+  }
+
+  .headercontact {
+    padding: 10px 20px;
+    margin-top: 30px;
+  }
+
+  .headercontact2 {
+    padding: 0 20px;
+  }
+
+  .instruction {
+    padding: 0 20px;
+    width: 100% !important;
+  }
+
+  .review-form {
+    width: 100% !important;
+  }
+
+  .form-body {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .upload-area {
+    width: 350px;
+  }
+
+  .form-container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 !important;
+  }
+
+  .frm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .account {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .account {
+    width: 300px;
+  }
+}

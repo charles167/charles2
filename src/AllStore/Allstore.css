@@ -1,0 +1,30 @@
+:root {
+  --font: "Inter", sans-serif;
+  --shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.09);
+
+  --color-white: #ffffff;
+  --color-black: #1A1A1A;
+  --color-green: #198754;
+  --color-yellow: #FFCC00;
+
+  --text-color: var(--color-black);
+  --default-color: var(--color-green);
+  --default-light: rgba(25, 135, 84, 0.15); /* soft green background */
+}
+
+.storesContent {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--text-color);
+  font-family: var(--font);
+}
+
+.vendor-sub_head2 {
+  background-color: var(--default-light);
+  text-align: center;
+  color: var(--default-color);
+  font-family: var(--font);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+}

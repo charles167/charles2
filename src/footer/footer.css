@@ -1,0 +1,127 @@
+:root {
+  --font: "Inter", sans-serif;
+  --shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.09);
+
+  --color-white: #ffffff;
+  --color-black: #1A1A1A;
+  --color-green: #198754;
+  --color-yellow: #FFCC00;
+
+  --text-color: var(--color-black);
+  --default-color: var(--color-green);
+}
+
+@font-face {
+  font-family: poppinsBold;
+  src: url(../font/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: poppinsSemiBold;
+  src: url(../font/Poppins-SemiBold.ttf);
+}
+@font-face {
+  font-family: poppinsLight;
+  src: url(../font/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: poppinsMedium;
+  src: url(../font/Poppins-Medium.ttf);
+}
+
+/* ================= FOOTER STYLING ================= */
+.footer {
+  margin-top: 200px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 60px;
+  background-color: var(--color-white);
+  color: var(--text-color);
+}
+
+.company-header {
+  font-family: poppinsBold;
+  font-size: 25px;
+}
+.company-header span {
+  color: var(--default-color);
+}
+
+.about-company {
+  font-family: poppinsMedium;
+  font-size: 14px;
+  margin-top: 10px;
+  color: #4a4a4a;
+}
+
+.footer-head {
+  font-family: poppinsSemiBold;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+.footer-head::first-letter {
+  font-size: 20px;
+  color: var(--color-yellow);
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column !important;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 0;
+}
+.footer-link-list li {
+  list-style-type: none;
+}
+.footer-link-list li .Footer-Link {
+  color: #4a4a4a;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: poppinsMedium;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+.footer-link-list li .Footer-Link:hover {
+  color: var(--default-color);
+}
+
+.contact {
+  font-family: poppinsMedium;
+  font-size: 15px;
+  color: #4a4a4a;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.socials div {
+  cursor: pointer;
+  color: var(--default-color);
+  transition: transform 0.3s ease;
+}
+.socials div:hover {
+  transform: scale(1.2);
+  color: var(--color-yellow);
+}
+
+.copywrite {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-family: poppinsMedium;
+  font-size: 14px;
+  color: var(--color-black);
+  background-color: #f3f3f3;
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 50px 20px;
+  }
+  .footer-head {
+    margin-top: 20px;
+  }
+}

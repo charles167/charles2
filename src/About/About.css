@@ -1,0 +1,159 @@
+:root {
+  --font: "Inter", sans-serif;
+  --shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.09);
+  --text-color: #181c14;
+  --default-color: #a4161bc0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.PageBody {
+  position: relative;
+  top: 100px;
+}
+.Image-Background {
+  background: url(../images/Background1.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+}
+.overlayBackground {
+  background-color: rgba(0, 0, 0, 0.836);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+}
+.welcome-logo {
+  background-color: rgba(255, 255, 255, 0.082);
+  width: 200px;
+  color: white;
+  font-family: var(--font);
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+}
+.about-header-content {
+  font-weight: 700;
+  font-size: 35px;
+  margin-top: 10px;
+  color: white;
+  font-family: var(--font);
+}
+.instructional-Video-Icon {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+.about-offer-head {
+  font-size: 30px;
+  width: 600px;
+  color: var(--text-color);
+  font-family: var(--font);
+  font-weight: bold;
+  border-radius: 5px;
+}
+.about-offer {
+  padding: 20px 40px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-offer-items {
+  font-size: 17px;
+  font-family: var(--font);
+  color: var(--text-color);
+  opacity: 0.7;
+  margin: 10px;
+}
+.about-offer-items-image {
+  width: 170px;
+  height: 170px;
+  border-radius: 100px;
+}
+.about-offer-items-cont {
+  position: relative;
+}
+.about-offer-items-content {
+  left: 0;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.541);
+  width: 170px;
+  height: 170px;
+  color: white;
+  font-weight: bold;
+  font-family: var(--font);
+  border-radius: 100px;
+}
+.our-mission-container {
+  display: flex;
+  gap: 30px;
+}
+.our-mission-container {
+  padding: 50px 50px;
+  margin-top: 50px;
+}
+.our-mission-head {
+  color: var(--text-color);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 35px;
+  margin-top: 30px;
+}
+.our-mission-note {
+  font-weight: 500;
+  font-family: var(--font);
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 18px;
+  margin-top: 10px;
+}
+.our-mission-img {
+  width: 600px;
+}
+@media screen and (max-width: 1077px) {
+  .about-offer-head {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .about-offer {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  .about-offer-items-cont {
+    margin-top: 20px;
+  }
+  .our-mission-container {
+    flex-direction: column;
+  }
+  .our-mission-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .PageBody {
+    top: 50px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .about-offer-head {
+    width: 100%;
+  }
+  .about-offer {
+    padding: 20px;
+  }
+  .our-mission-container {
+    padding: 20px;
+  }
+}

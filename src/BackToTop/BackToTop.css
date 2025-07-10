@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #198754; /* green */
+  --hover-color: #FFCC00;   /* yellow */
+  --text-color: #1A1A1A;    /* black */
+  --white-color: #ffffff;
+}
+
+.backtoTop-container {
+  position: fixed;
+  z-index: 1000000;
+  cursor: pointer;
+  right: 20px;
+  bottom: 20px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.backtoTop-container:hover {
+  background-color: var(--hover-color);
+}
+
+.backtoTop-container img {
+  width: 20px;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.backtoTop-container {
+  animation: bounce 1s infinite alternate;
+}
