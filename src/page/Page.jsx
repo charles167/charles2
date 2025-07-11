@@ -202,7 +202,7 @@ const Page = () => {
               <div>
                 <div className="offer-items-header">Choose a product</div>
                 <div className="offer-items-content">
-                  Explore Vendors located anywhere within the school.
+                  Explore Vendors .
                 </div>
               </div>
             </div>
@@ -424,7 +424,7 @@ const Page = () => {
           <div className="vendor_head_container">
             <div className="vendor-sub_head">Choose desired vendor</div>
             <div className="Vendor-head text-center my-3">
-              😍 Explore Vendors
+              😍 Explore 
             </div>
           </div>
 
