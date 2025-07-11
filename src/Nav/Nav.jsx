@@ -192,7 +192,7 @@ const Nav = () => {
 
                <li>
                 <Link className="Link" to="/Reign%20Bites">
-                 Reginbite
+                 Regin Bite
                 </Link>
                 </li>
 
