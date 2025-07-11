@@ -123,7 +123,7 @@ const Footer = () => {
                   </div>
                   <div
                     onClick={() => {
-                      window.location.replace("https://wa.me/+2347013234960");
+                      window.location.replace("https://wa.me/+2348160609012");
                     }}
                   >
                     <img
@@ -135,7 +135,7 @@ const Footer = () => {
                   </div>
                   <div
                     onClick={() => {
-                      window.location.replace("tel:+2347013234960");
+                      window.location.replace("tel:+2348160609012");
                     }}
                   >
                     <img

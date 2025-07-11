@@ -18,7 +18,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IoMdClose } from "react-icons/io";
 import FeedBack from "../FeedBack/FeedBack";
-import all_product from "../All_Product/all_product";
 import Items from "../Items/Items";
 import { toast } from "react-toastify";
 
@@ -31,6 +30,30 @@ const Page = () => {
   const [loader, setLoader] = useState(false);
   const [product, setProduct] = useState([]);
   const [loader2, SetLoader] = useState(false);
+
+  // Slider state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      image: pexels,
+      heading: "Welcome to Reignboxes",
+      text: "Explore top vendors and fast delivery",
+    },
+    {
+      image: pexels,
+      heading: "Delicious & Fast",
+      text: "Get your favorite meals delivered in minutes",
+    },
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   const getAllProduct = async () => {
     try {
       SetLoader(true);
@@ -51,7 +74,7 @@ const Page = () => {
   useEffect(() => {
     getAllProduct();
   }, []);
-  // Shuffle vendors
+
   const shuffleArray = (array) => {
     let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -61,21 +84,13 @@ const Page = () => {
     return shuffled;
   };
 
-  // Pagination logic
   const [currentPage, setCurrentPage] = useState(1);
   const vendorsPerPage = 6;
   const indexOfLastVendor = currentPage * vendorsPerPage;
   const indexOfFirstVendor = indexOfLastVendor - vendorsPerPage;
-  const currentVendors = shuffledVendors.slice(
-    indexOfFirstVendor,
-    indexOfLastVendor
-  );
-  const pageNumbers = Array.from(
-    { length: Math.ceil(Vendors.length / vendorsPerPage) },
-    (_, i) => i + 1
-  );
+  const currentVendors = shuffledVendors.slice(indexOfFirstVendor, indexOfLastVendor);
+  const pageNumbers = Array.from({ length: Math.ceil(Vendors.length / vendorsPerPage) }, (_, i) => i + 1);
 
-  // Fetch modal
   const getAllModal = async () => {
     try {
       const response = await axios.get("https://server-ten-gilt.vercel.app/note");
@@ -91,7 +106,6 @@ const Page = () => {
     }
   };
 
-  // Fetch reviews
   const getAllReviews = async () => {
     try {
       setLoader(true);
@@ -115,7 +129,7 @@ const Page = () => {
     if (modalShown) {
       const timer = setTimeout(() => {
         setModalIsOpen(true);
-        getAllModal(); // Only fetch modal data if it should show
+        getAllModal();
       }, 3000);
       return () => clearTimeout(timer);
     }
@@ -124,16 +138,47 @@ const Page = () => {
   return (
     <>
       <Nav />
-      <div className="PageBody">
-        {/* Breadcrumbs */}
-        <div className="breadcrumb-container">
-          <div className="bread-crumbs_content">
-            <div className="bread-crumb-head">reignboxes</div>
-            <div style={{ fontSize: 16, fontWeight: "500" }}>
-              Home <RiArrowRightSLine /> Vendors
+      <div className="breadcrumb-slider">
+        <div
+          className="slider-wrapper"
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+            display: "flex",
+            width: `${slides.length * 100}%`,
+            transition: "transform 0.5s ease-in-out",
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="slide"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "350px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "60px 30px 0",
+                color: "#fff",
+                flex: "0 0 100%",
+              }}
+            >
+              <div className="slide-text">
+                <div className="bread-crumb-head" style={{ fontSize: 35, fontWeight: "bold" }}>
+                  {slide.heading}
+                </div>
+                <div style={{ fontSize: 16, fontWeight: "500" }}>{slide.text}</div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
+        <div className="slider-controls">
+          <button onClick={prevSlide} className="slider-btn">&lt;</button>
+          <button onClick={nextSlide} className="slider-btn">&gt;</button>
+        </div>
+      </div>
 
         {/* Offer Section */}
         <div className="offer-container">
@@ -204,32 +249,38 @@ const Page = () => {
         <FeedBack />
 
         {/* Categories */}
-        <div className="Category">
-          <div className="category-head-container">
-            <div className="categories_Subhead">categories</div>
-            <div className="category-head text-center mt-3">
-              Browse by Category
-            </div>
-          </div>
+     <div className="Category">
+  <div className="category-head-container">
+    <div className="categories_Subhead">categories</div>
+    <div className="category-head text-center mt-3">
+      Browse by Category
+    </div>
+  </div>
 
-          <div className="category_container">
-            {[
-              { img: pasta, name: "Food" },
-              { img: Drinks, name: "Soft Drinks" },
-              { img: junk, name: "Junks" },
-              { img: pastry, name: "Pastries" },
-            ].map((cat, index) => (
-              <div key={index} className="category_item shadow-sm p-2 rounded">
-                <div className="category-image">
-                  <img src={cat.img} alt={cat.name} width={70} />
-                </div>
-                <div className="category-content">{cat.name}</div>
-              </div>
-            ))}
+  <div className="category_container">
+    {[
+      { img: pasta, name: "Food" },
+      { img: Drinks, name: "Soft Drinks" },
+      { img: junk, name: "Junks" },
+      { img: pastry, name: "Pastries" },
+    ].map((cat, index) => (
+      <Link
+        key={index}
+        className="Link"
+        to="/Reign%20Bites"
+      >
+        <div className="category_item shadow-sm p-2 rounded">
+          <div className="category-image">
+            <img src={cat.img} alt={cat.name} width={70} />
           </div>
+          <div className="category-content">{cat.name}</div>
         </div>
+      </Link>
+    ))}
+  </div>
+</div>
 
-       <div
+<div
   style={{
     display: "flex",
     flexWrap: "wrap",
@@ -257,7 +308,7 @@ const Page = () => {
         textTransform: "capitalize",
       }}
     >
-      First Product
+      Reign Boxes
     </h1>
     <div
       style={{
@@ -266,7 +317,7 @@ const Page = () => {
         gap: "1rem",
       }}
     >
-      {product.slice(0, 5).map((item) => (
+      {product.slice(15, 21).map((item) => (
         <div
           key={item.id}
           style={{
@@ -318,7 +369,7 @@ const Page = () => {
         textTransform: "capitalize",
       }}
     >
-      Second Product
+      Reign Bites
     </h1>
     <div
       style={{
@@ -328,7 +379,7 @@ const Page = () => {
       }}
     >
       {product
-        .slice(0, 5)
+        .slice(0, 4)
         .reverse()
         .map((item) => (
           <div
@@ -462,9 +513,8 @@ const Page = () => {
             )}
           </div>
         </div>
-      </div>
+      
     </>
   );
 };
-
 export default Page;

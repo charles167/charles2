@@ -1,3 +1,4 @@
+
 import React, { useContext, useState } from "react";
 import { IoAdd, IoClose } from "react-icons/io5";
 import { FaHeart, FaMinus, FaPlus } from "react-icons/fa6";
@@ -240,12 +241,26 @@ function Items(props) {
           </button>
         </div>
         <div className="px-3">
-          <button
-            className="add-cart-item shadow-sm"
-            onClick={() => addToCart(id)}
-          >
-            {cartItms[id] > 0 ? "Item In Cart" : "Add To Cart"}
-          </button>
+          {cartItms[id] > 0 ? (
+            <div className="custom-counter">
+
+              <button className="custom-add" onClick={() => Remove(id)}>
+              
+                -
+              </button>
+              <div className="custom-value">{cartItms[id]}</div>
+              <button className="custom-add" onClick={() => addToCart(id)}>
+                +
+              </button>
+            </div>
+          ) : (
+            <button
+              className="add-cart-item shadow-sm"
+              onClick={() => addToCart(id)}
+            >
+              Add To Cart
+            </button>
+          )}
         </div>
       </div>
     </>
@@ -253,3 +268,6 @@ function Items(props) {
 }
 
 export default Items;
+
+
+

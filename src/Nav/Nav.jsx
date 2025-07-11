@@ -79,6 +79,11 @@ const Nav = () => {
                   Stores
                 </Link>
               </li>
+                <li>
+                <Link className="Link" to="/Reign%20Bites">
+                 Reginbite
+                </Link>
+              </li>
 
               <li>
                 <Link className="Link" to="/about">

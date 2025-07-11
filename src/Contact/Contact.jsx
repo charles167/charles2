@@ -96,8 +96,8 @@ const Contact = () => {
             </div>
             <div className="Content-head">Call Us</div>
             <div className="content">
-              <a href="tel:+2347013234960" className="text-none content">
-                +2347013234960
+              <a href="tel:+2348160609012" className="text-none content">
+                +2348160609012
               </a>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Contact = () => {
               <div
                 className="social-media-icons"
                 onClick={() => {
-                  window.location.replace("https://wa.me/+2347013234960");
+                  window.location.replace("https://wa.me/+2348160609012");
                 }}
               >
                 <FaWhatsapp />
